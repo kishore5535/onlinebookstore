@@ -1,43 +1,20 @@
-pipeline 
-{
-    agent any
-
-    stages 
-    {
-        stage('Build') 
-        {
-            steps 
-            {
-                echo 'Hello Build'
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+         echo "Build app"
             }
         }
-    }
-    
-    {
-        stage('Test') 
-        {
-            steps 
-            {
-                echo 'Test World'
+        stage('Test') { 
+            steps {
+         echo "Test app"
             }
         }
-    }
-    
-    {
-        stage('Deploy') 
-        {
-            steps 
-            {
-                echo 'Deploy World'
+        stage('Deploy') { 
+            steps {
+            echo "Test app"
             }
-        }
-    }
-    
-    post 
-    {
-        always
-        {
-            emailext body: 'The Pipeline is successfull.', subject: 'Pipeline Status', to: 'kishore.may06@gmail.com'
         }
     }
 }
